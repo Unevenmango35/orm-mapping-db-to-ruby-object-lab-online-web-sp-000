@@ -71,7 +71,6 @@ class Student
 
   def self.students_below_12th_grade
     # returns an array of all students in grade 11 or below
-
     sql = <<-SQL
       SELECT *
       FROM students
@@ -81,7 +80,8 @@ class Student
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
-
   end
+
+  
 
 end
